@@ -109,6 +109,8 @@ class DataHandle:
         N_new = []
         E_new = []
         N_new.append(tree_seed)
+
+        #prinm算法，最小生成树
         while len(N_new) < self.corr_network.number_of_nodes():
             min_weight = 10000000.0
             for n in N_new:
@@ -125,8 +127,7 @@ class DataHandle:
         tree_graph = nx.Graph()
         tree_graph.add_edges_from(E_new)
 
-        nx.draw(tree_graph)
-        plt.show()
+
         # setting the color attributes for the network nodes
         # for n in tree_graph.nodes():
         #     tree_graph.node[n]['color'] = diz_colors[diz_sectors[n]]
