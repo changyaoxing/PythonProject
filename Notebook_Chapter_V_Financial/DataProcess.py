@@ -79,10 +79,6 @@ for s in list_ranking:
 
 
 
-
-
-
-
 #展示部门拥有公司数
 plt.rc('font', size=12)
 plt.figure(num=1, figsize=(15, 8),dpi=80)
@@ -206,6 +202,11 @@ for i1 in range(num_companies - 1):
         corr_network.add_edge(stock1, stock2, weight=metric_distance)
 
 
+
+
+
+nx.draw(corr_network, node_size=100, with_labels=True, prog='neato',  args='-Gmodel=subset -Gratio=fill')
+plt.show()
 
 tree_seed = "UTX"
 N_new = []
